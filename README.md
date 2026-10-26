@@ -19,18 +19,22 @@ This project demonstrates a basic security monitoring workflow using **Wazuh**, 
 - Validate process-creation telemetry for Notepad using Sysmon event **ID 1**.
 - Produce evidence-based incident reports and reproducible setup documentation.
 
+
 ## Architecture
+
+The following diagram shows how endpoint telemetry flows from Windows to Wazuh for analysis and investigation.
 
 ```mermaid
 flowchart TD
-    A[Windows 10/11 VM] --> B[Wazuh Agent]
-    A --> C[Sysmon]
-    C --> A
-    B -->|Security logs and configured event channels| D[Wazuh Server on Ubuntu Server 24.04 LTS]
-    D --> E[Analysis and detection rules]
-    E --> F[Wazuh Dashboard and alerts]
-    F --> G[Evidence and incident reports]
+    A["Windows 10/11 Endpoint"] --> B["Wazuh Agent"]
+    A --> C["Sysmon"]
+    C --> B
+    B --> D["Wazuh Server<br/>Ubuntu Server 24.04 LTS"]
+    D --> E["Detection Rules and Analysis"]
+    E --> F["Wazuh Dashboard and Alerts"]
+    F --> G["Investigation and Incident Reports"]
 ```
+
 
 ## Lab Components
 
