@@ -1,0 +1,23 @@
+# Secrets and local environment
+.env
+.env.*
+*.pem
+*.key
+*password*
+*credentials*
+secrets/
+private/
+
+# VM and installer artifacts
+*.vdi
+*.vmdk
+*.vbox
+*.iso
+*.ova
+*.ovf
+
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
